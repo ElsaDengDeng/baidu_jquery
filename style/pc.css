@@ -1,0 +1,869 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font: 12px arial;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	outline: none;
+}
+
+.pc-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	min-height: 768px;
+	cursor: default;
+}
+
+#s_top_wrap {
+	position: absolute;
+	z-index: 99;
+	min-width: 1000px;
+	width: 100%;
+}
+
+.s-top-wrap .s-top-nav {
+	position: absolute;
+	top: 74px;
+	width: 100%;
+	_width: 1000px;
+	height: 40px;
+	overflow: hidden;
+	display: none;
+}
+
+.s-top-wrap .s-center-box {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	_width: 1000px;
+	height: 100%;
+}
+
+#s_top_wrap.s-down .s-center-box {
+	box-shadow: 0 0 5px #888;
+	border-bottom: 1px solid #888\9;
+	_border-bottom: 0;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .95)), to(rgba(255, 255, 255, .95))) !important;
+	background-image: -moz-linear-gradient(rgba(255, 255, 255, .95) 0, rgba(255, 255, 255, .95) 100%) !important;
+	background-image: -ms-linear-gradient(rgba(255, 255, 255, .95) 0, rgba(255, 255, 255, .95) 100%) !important;
+	background-image: -o-linear-gradient(rgba(255, 255, 255, .95) 0, rgba(255, 255, 255, .95) 100%) !important;
+	background-image: linear-gradient(rgba(255, 255, 255, .95) 0, rgba(255, 255, 255, .95) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2ffffff, endColorstr=#f2ffffff) !important;
+}
+
+.weather {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	height: 32px;
+	padding-right: 15px;
+}
+
+.weather-wrapper {
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	margin: 7px 0px 0px 15px;
+}
+
+.weather-mod a,
+.weather-mod em,
+.weather-mod span {
+	color: rgb(173, 172, 172);
+}
+
+.weather-mod a {
+	text-decoration: none;
+	outline: none;
+}
+
+.city-wather {
+	display: block;
+	cursor: pointer;
+	height: 20px;
+	white-space: nowrap;
+}
+
+.weather-mod .show-weather,
+.weather-mod .show-pollution {
+	display: inline-block;
+	height: 20px;
+}
+
+.weather-mod .unknown-text,
+.unknown-city,
+.city-wather a,
+.city-wather em,
+.city-wather span,
+.show-pollution a,
+.show-pollution em,
+.show-pollution span {
+	color: rgb(85, 85, 85);
+}
+
+.weather-mod span {
+	display: inline-block;
+	height: 20px;
+	vertical-align: bottom;
+}
+
+.weather-mod .show-weather em,
+.weather-mod .show-polution-num {
+	line-height: 20px;
+	font: 12px arial;
+}
+
+.weather-mod .show-weather img,
+.weather-mod .show-weather em,
+.weather-mod .show-pollution em {
+	vertical-align: top;
+}
+
+.weather-mod .show-weather .show-icon {
+	margin-right: 9px;
+}
+
+.cur-weatherimg {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	margin-right: 5px;
+	background: url('../images/cloud.png?__sprite');
+}
+
+
+/*.weather-mod .show-weather .show-icon .weather-icon {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}*/
+
+.show-pollution {
+	display: inline-block;
+	height: 20px;
+	vertical-align: bottom;
+}
+
+.polution-level-10 .show-polution-name {
+	color: #badc00;
+	font-weight: bold;
+}
+
+.show-pollution em {
+	margin-right: 7px;
+}
+
+.show-weather img,
+.show-weather em,
+.show-pollution em {
+	vertical-align: top;
+	font: 12px arial;
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 100;
+	width: 590px;
+	font-size: 13px;
+	text-align: right;
+	color: #999;
+}
+
+nav a {
+	float: left;
+	margin-left: 20px;
+	color: #333;
+	font-weight: bold;
+	line-height: 24px;
+	font-size: 13px;
+	text-decoration: underline;
+}
+
+nav a:hover {
+	color: #00c;
+}
+
+
+/*设置下拉菜单*/
+
+.setting-menu {
+	position: absolute;
+	width: 46px;
+	height: 24px;
+	right: 75px;
+	text-align: center;
+	font-weight: normal;
+}
+
+.setting-menu a {
+	text-decoration: none;
+	margin: 0px;
+}
+
+.setting-menu:hover .baidu-setting {
+	display: block;
+}
+
+.setting-menu .baidu-setting {
+	position: absolute;
+	top: 25px;
+	left: -16px;
+	width: 60px;
+	border: 1px solid #ddd;
+	box-shadow: 1px 1px 5px #ddd;
+	z-index: 99;
+	display: none;
+}
+
+.setting-menu .baidu-setting a {
+	display: inline-block;
+	width: 100%;
+	color: #333;
+}
+
+.setting-menu .baidu-setting a:hover {
+	color: #ffffff;
+	background: #3385ff;
+}
+
+.setting-menu .icon-trangle {
+	top: -11px;
+	left: 25px;
+	width: 0;
+	height: 0;
+	display: block;
+	position: absolute;
+	border: 5px solid transparent;
+	border-style: dashed dashed solid dashed;
+	border-bottom-color: #d8d8d8;
+}
+
+.setting-menu .icon-trangle:after {
+	content: '.';
+	top: -4px;
+	left: -5px;
+	width: 0;
+	height: 0;
+	display: block;
+	position: absolute;
+	border: 5px solid transparent;
+	border-style: dashed dashed solid dashed;
+	border-bottom-color: #ffffff;
+}
+
+
+/*更多产品*/
+
+nav .more {
+	position: absolute;
+	right: 10px;
+	width: 60px;
+	height: 23px;
+	float: left;
+	color: #fff;
+	background: #38f;
+	line-height: 24px;
+	font-size: 13px;
+	text-align: center;
+	overflow: hidden;
+	border: 1px solid #38f;
+	margin-left: 19px;
+	margin-right: 2px;
+	text-decoration: none;
+}
+
+nav .more:hover {
+	background: #fff;
+	color: #000;
+}
+
+.more-product {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 89px;
+	border-left: 1px solid #ddd;
+	background-color: #f9f9f9;
+	display: none;
+	z-index: 999;
+	overflow: scroll;
+}
+
+.more-product ul {
+	padding: 0px 5px 0 5px;
+	text-align: center;
+}
+
+.more-product li {
+	position: relative;
+	height: 60px;
+	padding-top: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.more-product .more-sub-btn {
+	height: 20px;
+}
+
+.more-product .more-sub-btn:hover {
+	text-decoration: none;
+}
+
+.more-product a {
+	color: #333;
+	text-decoration: none;
+}
+
+.more-product a:hover {
+	text-decoration: underline;
+	/*display: block;*/
+}
+
+.more-product .more-all {
+	border: none;
+	text-decoration: underline;
+}
+
+.more-product span {
+	width: 36px;
+	height: 36px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	background: url(../images/bdbri_icons.png) no-repeat;
+	cursor: pointer;
+}
+
+.more-product .more-sub-one {
+	background-position: -72px 0;
+}
+
+.more-product .more-sub-two {
+	background-position: -112px 0px;
+}
+
+.more-product .more-sub-three {
+	background-position: -36px 0;
+}
+
+.more-product .more-sub-four {
+	background-position: -146px 0;
+}
+
+.more-product .more-sub-five {
+	background-position: -183px 0;
+}
+
+
+/*主体部分*/
+
+.content {
+	position: relative;
+	height: 38.2%;
+	min-height: 293px;
+	width: 1000px;
+	margin: 0 auto;
+	_height: 293px;
+	top: 220px;
+	text-align: center;
+	top: 5%;
+}
+
+.content .search-form {
+	height: 191px;
+	position: relative;
+}
+
+.content form {
+	position: relative;
+	z-index: 100;
+	margin: 22px auto 0;
+	width: 647px;
+}
+
+.content img {
+	width: 270px;
+	height: 129px;
+}
+
+.content .search-input {
+	width: 539px;
+	height: 28px;
+	border: 1px solid #ddd;
+	padding: 3px 0 3px 7px;
+	border-right-width: 0px;
+	vertical-align: middle;
+	line-height: 18px;
+	float: left;
+	height: 36px;
+}
+
+.content .search-input:hover {
+	border-color: #999 transparent #b3b3b3 #999;
+}
+
+.content .search-input:focus {
+	border-color: #4791ff transparent #4791ff #4791ff;
+}
+
+.content .search-btn {
+	width: 100px;
+	height: 44px;
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 1px;
+	background: #3385ff;
+	border: 1px solid #2d78f4;
+	vertical-align: middle;
+	cursor: pointer;
+	float: left;
+}
+
+.content .search-btn:hover {
+	background-color: #317ef3;
+}
+
+.content .icon-pic {
+	z-index: 1;
+	position: absolute;
+	left: 80%;
+	width: 18px;
+	height: 16px;
+	top: 10px;
+	background: #fff url('../images/icon-pic.png?__sprite') no-repeat;
+	cursor: pointer;
+	float: left;
+}
+
+.content .icon-pic:hover {
+	background-position: 0 -20px;
+}
+
+
+/*登录后上拉固定显示搜索框 start */
+
+.searchpanel {
+	position: fixed;
+	top: 0px;
+	text-align: center;
+	background: #fff;
+}
+
+.searchpanel .searchbox {
+	position: relative;
+	text-align: center;
+	min-width: 550px;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.searchpanel .searchbox .searchleft {
+	animation: fadein 1s;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.searchpanel .searchbox .searchleft img {
+	width: 101px;
+	height: 32.8px;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}
+
+.searchpanel .searchbox .searchright {
+	display: inline-block;
+	margin: 8px 0 0 25px;
+	vertical-align: middle;
+}
+
+.searchright .searchText {
+	width: 539px;
+	border: 1px solid #ddd;
+	padding: 3px 0 3px 7px;
+	border-right-width: 0px;
+	vertical-align: middle;
+	line-height: 18px;
+	float: left;
+	height: 44px;
+}
+
+.searchright .searchText:hover {
+	border-color: #999 transparent #b3b3b3 #999;
+}
+
+.searchright .searchText:focus {
+	border-color: #4791ff transparent #4791ff #4791ff;
+}
+
+.searchright .searchSubmit {
+	width: 100px;
+	height: 44px;
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 1px;
+	background: #3385ff;
+	border: 1px solid #2d78f4;
+	vertical-align: middle;
+	cursor: pointer;
+	float: left;
+}
+
+.searchright .searchSubmit:hover {
+	background-color: #317ef3;
+}
+
+
+/*登录后上拉固定显示搜索框 end */
+
+#s_wrap {
+	width: 100%;
+	_width: 1000px;
+	margin: 0 auto;
+	margin-top: -10px;
+	position: relative;
+}
+
+#s_main {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	width: 895px;
+}
+
+.main {
+	display: none;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.s-mancacrd-main {
+	position: relative;
+	z-index: 2;
+}
+
+.s-menu-gurd,
+.s-menu-container {
+	width: 100%;
+	min-height: 35px;
+	_height: 35px;
+}
+
+.s-ctner-menus {
+	position: relative;
+	z-index: 11111;
+	width: 893px;
+	margin: 0 auto;
+	text-align: left;
+	font-size: 14px;
+	border-top: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	border-left: 1px solid #e9e9e9;
+	height: 39px;
+	line-height: 39px;
+}
+
+.s-ctner-menus .s-menu-item:hover {
+	background-color: #b3b6bb !important;
+	color: #fff;
+	background-image: none !important;
+	filter: none !important;
+}
+
+.s-ctner-menus .s-menu-item:hover {
+	margin-top: -1px;
+	margin-bottom: -1px;
+	border-top: 1px solid #b3b6bb;
+	border-bottom: 1px solid #b3b6bb;
+}
+
+.s-menu-gurd .s-ctner-menus .s-menu-mine,
+.s-ctner-menus .s-menu-mine .mine-icon,
+.s-ctner-menus .s-menu-mine .mine-text {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: top;
+}
+
+.s-ctner-menus .s-menu-item {
+	color: #333;
+	width: 80px;
+	height: 39px;
+	display: inline-block;
+	zoom: 1;
+	vertical-align: top;
+	text-align: center;
+	cursor: pointer;
+}
+
+.s-ctner-menus .s-menu-mine {
+	float: left;
+	text-align: left;
+	width: 124px;
+}
+
+.main a,
+.main span {
+	outline: none;
+}
+
+.s-ctner-menus .s-menu-mine .mine-icon {
+	margin: 11px 0 0 20px;
+	width: 20px;
+	height: 18px;
+	background: url(../images/card_setts.png?__sprite) no-repeat -15px 0;
+	/*_background: url(../images/card_setts.png) no-repeat -15px 0;*/
+}
+
+.s-ctner-menus .s-menu-mine:hover .mine-icon,
+.s-ctner-menus .current .mine-icon {
+	background-position: -144px 0;
+}
+
+.s-ctner-menus .s-menu-mine .mine-text {
+	height: 100%;
+	margin-left: 3px;
+}
+
+.s-ctner-menus .s-menus-outer {
+	float: left;
+	display: -webkit-flex;
+	-webkit-flex-flow: row wrap;
+	-webkit-align-items: stretch;
+	display: -moz-flex;
+	-moz-flex-flow: row wrap;
+	-moz-align-items: stretch;
+	display: -ms-flexbox;
+	-ms-flex-flow: row wrap;
+	-ms-align-items: stretch;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	width: 719px;
+}
+
+.s-ctner-menus .s-menus-outer .menus-wrapper {
+	width: auto;
+}
+
+.s-ctner-menus .menus-wrapper,
+.s-ctner-menus .s-menu-setting {
+	display: inline-block;
+	zoom: 1;
+	float: left;
+	vertical-align: top;
+	height: 100%;
+}
+
+.s-ctner-menus .current,
+.s-ctner-menus .current:hover {
+	_position: relative;
+	background-color: #9a9da2 !important;
+	color: #fff;
+	font-weight: bold;
+	background-image: none !important;
+	filter: none !important;
+}
+
+.s-ctner-menus .current,
+.s-ctner-menus .current:hover {
+	margin-bottom: -1px;
+	margin-top: -1px;
+	border-top: 1px solid #9a9da2;
+	border-bottom: 1px solid #9a9da2;
+}
+
+.s-ctner-menus .s-menu-item.s_shopping,
+.menus-wrapper .s-oly-nav {
+	position: relative;
+}
+
+.s-ctner-menus .s-menus-outer .s-bg-space {
+	-webkit-flex: auto;
+	-moz-flex: auto;
+	-ms-flex: auto;
+	flex: auto;
+	height: 38px;
+}
+
+.s-ctner-menus .s-menu-setting {
+	height: 39px;
+}
+
+.s-ctner-menus .s-menu-setting {
+	float: right;
+	width: 18px;
+	padding: 0 21px 0 11px;
+	cursor: pointer;
+}
+
+.s-ctner-menus .menus-wrapper,
+.s-ctner-menus .s-menu-setting {
+	display: inline-block;
+	zoom: 1;
+	float: left;
+	vertical-align: top;
+	height: 100%;
+}
+
+.s-ctner-contents {
+	width: 893px;
+	min-height: 363px;
+	_height: 363px;
+	_overflow: visible;
+	border: 1px solid #e9e9e9;
+}
+
+.s-content {
+	position: relative;
+	width: 843px;
+	padding: 25px;
+	font: 24px bold arial;
+}
+
+.s-content span {
+	color: red;
+}
+
+.s-news-rank-wrapper {
+	position: absolute;
+	right: 5px;
+	width: 300px;
+	margin-top: 20px;
+	text-align: left;
+}
+
+
+/*回到顶部*/
+
+.s-mancacrd-main .top-feed {
+	visibility: hidden;
+	position: fixed;
+	_position: absolute;
+	left: 50%;
+	margin-left: 447px;
+	width: 51px;
+	bottom: 30px;
+	_top: 200px;
+	_bottom: auto;
+}
+
+.s-mancacrd-main .top-feed .to-top,
+.s-mancacrd-main .top-feed .icon-qrcode {
+	position: relative;
+	height: 25px;
+	width: 38px;
+	padding-top: 12px;
+	border: 1px solid #e3e3e3;
+	background-color: #fafafa;
+	cursor: pointer;
+}
+
+.s-mancacrd-main .top-feed .icon-mask {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 38px;
+	line-height: 38px;
+	width: 38px;
+	z-index: 3;
+	font-size: 13px;
+	background-color: #eee;
+	color: #999;
+	margin-left: -1px;
+	margin-top: -1px;
+	border: 1px solid #e3e3e3;
+}
+
+.s-mancacrd-main .icon-mask .text {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	line-height: 16px;
+	width: 30px;
+}
+
+.s-mancacrd-main .top-feed .to-top span {
+	display: block;
+	height: 17px;
+	width: 33px;
+	margin: 0 auto;
+	background: url(../images/topfed.png) no-repeat -1px -10px;
+	_background: url(../images/topfed.png) no-repeat -1px -10px;
+}
+
+.s-mancacrd-main .top-feed .icon-over .icon {
+	background: none;
+}
+
+
+/*回到顶部*/
+
+
+/*底部信息*/
+
+.footer {
+	position: absolute;
+	line-height: 22px;
+	top: 100%;
+	text-align: center;
+	width: 100%;
+}
+
+.footer p {
+	position: relative;
+	text-align: center;
+	color: #999;
+}
+
+.footer p a {
+	color: #999;
+}
+
+.footer .copy_right a {
+	color: #999;
+}
+
+.footer .c-icon-icrlogo,
+.icon-copyright {
+	background: url(../images/icons.png?__sprite) no-repeat;
+	position: absolute;
+	top: 2px;
+	width: 14px;
+	height: 17px;
+}
+
+.footer .c-icon-icrlogo {
+	/*left: 56.5%;*/
+	background-position: -600px -96px;
+}
+
+.footer .icon-copyright {
+	background-position: -623px -96px;
+	/*left: 79.3%;*/
+}
